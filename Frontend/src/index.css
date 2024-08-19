@@ -1,0 +1,11 @@
+:root{
+    --border-color : rgb(214, 214, 214);
+    --border-color-trans : rgb(48, 48, 48);
+    --font-color : rgb(80, 78, 78);
+    --input-background-color : rgb(250, 249, 249);
+    --blue-open : rgb(0, 174, 255);
+}
+
+.body{
+    margin : 0px !important;
+}
