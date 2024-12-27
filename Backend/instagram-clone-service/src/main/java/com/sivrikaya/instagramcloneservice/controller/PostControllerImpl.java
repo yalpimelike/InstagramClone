@@ -17,27 +17,33 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/posts")
 public class PostControllerImpl implements PostController {
+
     private final PostService postService;
+
     @GetMapping
     @Override
     public List<PostResponse> getAll() {
         return postService.getAll();
     }
+
     @GetMapping("{id}")
     @Override
     public Optional<Post> getById(@PathVariable Long id) {
         return postService.getById(id);
     }
+
     @PostMapping
     @Override
     public PostResponse create(@RequestBody CreatePostRequest post) {
         return postService.create(post);
     }
+
     @PutMapping
     @Override
     public PostResponse update(@RequestBody UpdatePostRequest post) {
         return postService.update(post);
     }
+
     @DeleteMapping("{id}")
     @Override
     public boolean deleteById(@PathVariable Long id) {

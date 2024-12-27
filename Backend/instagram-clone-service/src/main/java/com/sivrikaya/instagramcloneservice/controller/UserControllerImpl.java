@@ -16,27 +16,33 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserControllerImpl implements UserController {
+
     private final UserService userService;
+
     @GetMapping
     @Override
     public List<UserResponse> getAll() {
         return userService.getAll();
     }
+
     @GetMapping("{id}")
     @Override
     public Optional<User> getById(@PathVariable Long id) {
         return userService.getById(id);
     }
+
     @PostMapping
     @Override
     public UserResponse create(@RequestBody CreateUserRequest user) {
         return userService.create(user);
     }
+
     @PutMapping
     @Override
     public UserResponse update(@RequestBody User user) {
         return userService.update(user);
     }
+
     @DeleteMapping("{id}")
     @Override
     public boolean deleteById(@PathVariable Long id) {

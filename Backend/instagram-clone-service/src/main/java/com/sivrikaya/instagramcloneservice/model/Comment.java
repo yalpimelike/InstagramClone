@@ -17,13 +17,22 @@ import java.util.List;
 @Builder
 @Table(name = "comments")
 public class Comment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(columnDefinition = "text")
     private String text;
+
+
+
     private Long postId;
-    private Long userId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+
+
     @OneToMany
     private List<Like> likeList;
 }

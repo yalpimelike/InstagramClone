@@ -13,10 +13,13 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Table(name = "likes")
 public class Like {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private Long postId;
+
     private Long userId;
 
 }

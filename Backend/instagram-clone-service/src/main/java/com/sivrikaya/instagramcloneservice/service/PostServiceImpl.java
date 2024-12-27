@@ -20,8 +20,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Slf4j
 public class PostServiceImpl implements PostService {
+
     private final PostRepository postRepository;
     private final UserRepository userRepository;
+
     @Override
     public List<PostResponse> getAll() {
         List<Post> posts =  postRepository.findAll();

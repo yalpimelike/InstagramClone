@@ -17,11 +17,14 @@ import java.util.List;
 @Builder
 @Table(name = "posts")
 public class Post {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title,description,photourl;
     private Long userId;
+
+
     @OneToMany
     private List<Comment> comments;
 

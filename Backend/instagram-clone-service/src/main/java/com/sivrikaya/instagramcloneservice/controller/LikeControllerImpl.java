@@ -16,22 +16,27 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/likes")
 public class LikeControllerImpl implements LikeController {
+
     private final LikeService likeService;
+
     @GetMapping
     @Override
     public List<LikeResponse> getAll() {
         return likeService.getAll();
     }
+
     @GetMapping("{id}")
     @Override
     public Optional<Like> getById(@PathVariable Long id) {
         return likeService.getById(id);
     }
+
     @PostMapping
     @Override
     public LikeResponse create(@RequestBody CreateLikeRequest like) {
         return likeService.create(like);
     }
+
     @DeleteMapping("{id}")
     @Override
     public boolean deleteById(@PathVariable Long id) {
